@@ -1,0 +1,36 @@
+.container {
+  padding: 50px 0;
+  width: 1000px;
+  margin: 0 auto;
+  color: #333;
+
+  p {
+    margin-bottom: 1.5em;
+  }
+
+  .write-title {
+    font-weight: 300;
+    margin-top: 50px;
+    color: #333;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    width: 900px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90vw;
+    padding: 20px 0;
+    font-size: 14px;
+  }
+}

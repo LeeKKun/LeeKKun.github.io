@@ -1,0 +1,27 @@
+---
+layout: default
+title: 关于我 - 李坤的博客
+css: /css/about.css
+---
+
+<link rel="stylesheet" href="/css/gitalk.css">
+<div class="container">
+  <p>你好，我叫李坤</p>
+  <h2 class="write-title">留言板</h2>
+  <div id="gitalk-container"></div>
+</div>
+<script src="/js/gitalk.js"></script>
+<script>
+  const gitalk = new Gitalk({
+    clientID: '70f0d7717a3b431b217b',
+    clientSecret: '517a6c8848d87c5ee30964e40e0b287726a417f4',
+    repo: 'LeeKKun.github.io',
+    owner: 'LeeKKun',
+    admin: ['LeeKKun'],
+    id: 'About',
+    distractionFreeMode: false,
+    createIssueManually: true
+  });
+
+  gitalk.render('gitalk-container');
+</script>

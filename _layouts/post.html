@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="李坤">
+  <meta name="description" content="李坤的博客" />
+  <title>{{ page.title }} - 李坤的博客</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/css/gitalk.css">
+  <link rel="stylesheet" href="/css/prism.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/post.css">
+  <script src="/js/util.js"></script>
+</head>
+
+<body>
+  <div id="header" style="background-image: url({{ page.bannerImg }})">
+    {% include nav.html %}
+    <div class="content">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <div class="post-description">{{ page.description }}</div>
+      <div class="post-date">{{ page.date | date: '%Y-%m-%d' }}</div>
+      <div class="tags">
+        {% for tag in page.tags %}
+        <a class="tag" href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="main">
+      {{ content }}
+      <div class="date">发布时间：{{ page.date | date: '%Y-%m-%d' }}</div>
+      <div id="gitalk-container"></div>
+    </div>
+    <div class="nav-container">
+      <div class="main-nav">
+        <div class="title">目录</div>
+      </div>
+    </div>
+  </div>
+  {% include footer.html %}
+  {% include back-top.html %}
+  <script src="/js/prism.js"></script>
+  <script>
+    (function (w, d) {
+      var $nav = document.querySelector('.main-nav');
+      var $main = document.querySelector('.main');
+      var titleNodeNames = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
+      var contentItems = [];
+      var navItems = [];
+      for (var i = 0; i < $main.children.length; i++) {
+        var element = $main.children[i];
+        if (titleNodeNames.includes(element.nodeName)) {
+          var link = document.createElement('a');
+          link.href = '#' + element.innerText;
+          link.innerText = element.innerText;
+
+          $nav.appendChild(link);
+          navItems.push(link);
+          element.id = element.innerText;
+          contentItems.push(element);
+        }
+      }
+
+      function bindEvent() {
+        var scrollTop = d.documentElement.scrollTop || d.body.scrollTop;
+        if (scrollTop >= $nav.parentNode.offsetTop) {
+          addClass($nav, 'active');
+        } else {
+          removeClass($nav, 'active');
+        }
+        for (var i = 0; i < navItems.length; i++) {
+          removeClass(navItems[i], 'active');
+        }
+        for (var i = contentItems.length - 1; i >= 0; i--) {
+          if (scrollTop >= getElementTop(contentItems[i])) {
+            addClass(navItems[i], 'active');
+            return;
+          }
+        }
+        addClass(navItems[0], 'active');
+      }
+      w.addEventListener('scroll', bindEvent);
+      w.addEventListener('load', bindEvent);
+    })(window, document)
+  </script>
+  <script src="/js/gitalk.js"></script>
+  <script src="/js/md5.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '70f0d7717a3b431b217b',
+      clientSecret: '517a6c8848d87c5ee30964e40e0b287726a417f4',
+      repo: 'LeeKKun.github.io',
+      owner: 'LeeKKun',
+      admin: ['LeeKKun'],
+      id: md5(location.pathname),
+      distractionFreeMode: false,
+      createIssueManually: true
+    });
+
+    gitalk.render('gitalk-container');
+  </script>
+</body>
+
+</html>

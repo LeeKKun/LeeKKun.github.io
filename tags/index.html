@@ -1,0 +1,51 @@
+---
+layout: default
+title: 标签 - 李坤的博客
+css: /css/tags.css
+---
+
+<div class="container">
+  <div class="tags">
+    {% for tag in site.tags %}
+    <a class="tag" href="/tags/#{{ tag[0] }}">{{ tag[0] }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="tag-list">
+    {% for tag in site.tags %}
+    <div class="tag-item">
+      <div class="tag-title" id="{{ tag[0] }}">
+        <i class="iconfont">&#xe8df;</i>
+        <span class="tag-text">{{ tag[0] }}</span>
+        </span>
+        {% for post in tag[1] %}
+        <div class="post-preview">
+          <a href="{{ post.url }}">
+            <h2 class="post-title">
+              {{ post.title }}
+            </h2>
+            {% if post.description %}
+            <p class="post-description">
+              {{ post.description }}
+            </p>
+            {% endif %}
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  <script>
+    (function (w, d) {
+      var $tag = d.querySelectorAll('.tag');
+      var $header = d.querySelector('#header');
+      for (var i = 0; i < $tag.length; i++) {
+        $tag[i].addEventListener('click', function() {
+          if ($header) {
+            removeClass($header, 'visible');
+          }
+        })
+      }
+    })(window, document)
+  </script>

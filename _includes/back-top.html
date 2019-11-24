@@ -1,0 +1,41 @@
+<div class="back-top">
+  <i class="iconfont">&#xe7a1;</i>
+</div>
+<script>
+  (function (d, w) {
+    function scrollTo(targetY) {
+      var currentY =
+        d.documentElement.scrollTop || d.body.scrollTop;
+      var distance = targetY - currentY;
+      var num = 0;
+
+      function animate() {
+        var currentY =
+          d.documentElement.scrollTop || d.body.scrollTop;
+        w.scrollTo(0, currentY + distance / 10);
+        num++;
+        if (num === 10) return;
+        w.requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+    var $upTop = d.querySelector('.back-top');
+
+    $upTop.onclick = function () {
+      scrollTo(0);
+    };
+
+    function bindEvent() {
+      var scrollTop = d.documentElement.scrollTop || d.body.scrollTop;
+      if (scrollTop > 100) {
+        $upTop.style.display = 'block';
+      } else {
+        $upTop.style.display = 'none';
+      }
+    }
+
+    w.addEventListener('scroll', bindEvent);
+    w.addEventListener('load', bindEvent);
+  })(document, window);
+</script>

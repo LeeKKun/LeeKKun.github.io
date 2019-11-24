@@ -1,0 +1,45 @@
+<div id="header">
+  <div class="wrap">
+    {% include nav.html %}
+    <div class="banner">
+      <div class="center">
+        <div class="text">记录学习笔记、日常生活。</div>
+        <div class="search-box">
+          <input type="text" placeholder="搜索文章" id="search-input">
+          <div class="icon">
+            <i class="iconfont">&#xe6a5;</i>
+          </div>
+          <div id="results-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/simple-jekyll-search.min.js"></script>
+
+<script>
+  (function (d, w) {
+    var $searchInput = d.getElementById('search-input');
+    var $resultsContainer = d.getElementById('results-container');
+
+    SimpleJekyllSearch({
+      searchInput: $searchInput,
+      resultsContainer: $resultsContainer,
+      json: '/search.json',
+      searchResultTemplate:
+        '<li class="search-results-item">' +
+        '<a href="{url}" title="{title}">' +
+        '<div class="title">' +
+        '<h4>{title}</h4><span>{date}</span>' +
+        '</div>' +
+        '<p class="description">{description}</p>' +
+        '<p class="search-tags">{tags}</p>' +
+        '</a>' +
+        '</li>',
+      noResultsText: '<div class="not-data">哎呀，没有找到！</div>',
+      limit: 20,
+      fuzzy: false
+    })
+  })(document, window);
+</script>

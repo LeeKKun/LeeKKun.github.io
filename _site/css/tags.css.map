@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "tags.css",
+	"sources": [
+		"tags.scss",
+		"_sass/tags.scss",
+		"_sass/theme.scss"
+	],
+	"sourcesContent": [
+		"@import \"tags\";",
+		"@import \"./theme.scss\";\r\n\r\n.container {\r\n  padding: 50px 0;\r\n  width: 900px;\r\n  margin: 0 auto;\r\n  color: #333;\r\n}\r\n\r\n.tags {\r\n  flex: 0 0 auto;\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n\r\n  .tag {\r\n    font-size: 12px;\r\n    transition: border-color 0.4s;\r\n    color: #888;\r\n    padding: 8px 12px;\r\n    line-height: 1.2;\r\n    border-radius: 9em;\r\n    border: 1px solid #e9e9e9;\r\n    margin: 0 6px 6px 0;\r\n\r\n    &:hover {\r\n      border-color: $color;\r\n      color: $color;\r\n    }\r\n  }\r\n}\r\n\r\n.tag-list {\r\n  margin-top: 30px;\r\n  padding-top: 20px;\r\n  border-top: 1px solid #eee;\r\n\r\n  a {\r\n    color: #333;\r\n\r\n    &:hover {\r\n      color: $color2;\r\n    }\r\n  }\r\n\r\n  .tag-title {\r\n    margin: 10px 0 20px;\r\n    color: $color;\r\n    font-weight: 300;\r\n\r\n    .tag-text {\r\n      font-size: 18px;\r\n    }\r\n  }\r\n\r\n  .post-preview {\r\n    border-bottom: 1px solid #eee;\r\n    padding: 16px;\r\n\r\n    .post-title {\r\n      margin-bottom: 4px;\r\n      font-size: 20px;\r\n    }\r\n\r\n    .post-description {\r\n      font-weight: 300;\r\n    }\r\n  }\r\n}\r\n\r\n@media (max-width: 1200px) {\r\n  .container {\r\n    width: 800px;\r\n  }\r\n}\r\n\r\n@media (max-width: 1000px) {\r\n  .container {\r\n    width: 600px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .container {\r\n    width: 90vw;\r\n    padding: 20px 0;\r\n    font-size: 14px;\r\n  }\r\n}\r\n",
+		"$color: #1d9cef;\r\n\r\n$color2: #186088;\r\n\r\n$red: #c7254e;\r\n\r\n$navHeight: 50px;\r\n"
+	],
+	"names": [],
+	"mappings": "ACEA,AAAA,UAAU,AAAC,CACT,OAAO,CAAE,MAAM,CACf,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,MAAM,CACd,KAAK,CAAE,IAAI,CACZ,AAED,AAAA,KAAK,AAAC,CACJ,IAAI,CAAE,QAAQ,CACd,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CAiBhB,AApBD,AAKE,KALG,CAKH,IAAI,AAAC,CACH,SAAS,CAAE,IAAI,CACf,UAAU,CAAE,iBAAiB,CAC7B,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,QAAQ,CACjB,WAAW,CAAE,GAAG,CAChB,aAAa,CAAE,GAAG,CAClB,MAAM,CAAE,iBAAiB,CACzB,MAAM,CAAE,WAAW,CAMpB,AAnBH,AAeI,KAfC,CAKH,IAAI,AAUD,MAAM,AAAC,CACN,YAAY,CCzBV,OAAO,CD0BT,KAAK,CC1BH,OAAO,CD2BV,AAIL,AAAA,SAAS,AAAC,CACR,UAAU,CAAE,IAAI,CAChB,WAAW,CAAE,IAAI,CACjB,UAAU,CAAE,cAAc,CAiC3B,AApCD,AAKE,SALO,CAKP,CAAC,AAAC,CACA,KAAK,CAAE,IAAI,CAKZ,AAXH,AAQI,SARK,CAKP,CAAC,AAGE,MAAM,AAAC,CACN,KAAK,CCtCF,OAAO,CDuCX,AAVL,AAaE,SAbO,CAaP,UAAU,AAAC,CACT,MAAM,CAAE,WAAW,CACnB,KAAK,CC9CD,OAAO,CD+CX,WAAW,CAAE,GAAG,CAKjB,AArBH,AAkBI,SAlBK,CAaP,UAAU,CAKR,SAAS,AAAC,CACR,SAAS,CAAE,IAAI,CAChB,AApBL,AAuBE,SAvBO,CAuBP,aAAa,AAAC,CACZ,aAAa,CAAE,cAAc,CAC7B,OAAO,CAAE,IAAI,CAUd,AAnCH,AA2BI,SA3BK,CAuBP,aAAa,CAIX,WAAW,AAAC,CACV,aAAa,CAAE,GAAG,CAClB,SAAS,CAAE,IAAI,CAChB,AA9BL,AAgCI,SAhCK,CAuBP,aAAa,CASX,iBAAiB,AAAC,CAChB,WAAW,CAAE,GAAG,CACjB,AAIL,MAAM,EAAE,SAAS,EAAE,MAAM,EACvB,AAAA,UAAU,AAAC,CACT,KAAK,CAAE,KAAK,CACb,CAGH,MAAM,EAAE,SAAS,EAAE,MAAM,EACvB,AAAA,UAAU,AAAC,CACT,KAAK,CAAE,KAAK,CACb,CAGH,MAAM,EAAE,SAAS,EAAE,KAAK,EACtB,AAAA,UAAU,AAAC,CACT,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,MAAM,CACf,SAAS,CAAE,IAAI,CAChB"
+}

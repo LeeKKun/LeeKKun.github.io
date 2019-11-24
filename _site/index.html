@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="李坤">
+  <meta name="description" content="李坤的博客" />
+  <title>李坤的博客</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/css/base.css">
+  
+  <link rel="stylesheet" href="/css/index.css">
+  
+  <script src="/js/util.js"></script>
+</head>
+
+<body>
+  <div id="header">
+  <div class="wrap">
+    <div class="top">
+  <div class="title">
+    <a href="/">李坤的博客</a>
+  </div>
+  <nav class="nav">
+    <div class="item">
+      <a href="/">Home</a>
+    </div>
+    <div class="item">
+      <a href="/about">About</a>
+    </div>
+    <div class="item">
+      <a href="/tags">Tags</a>
+    </div>
+  </nav>
+  <div class="mobile-nav">
+    <div class="mobile-nav-menu icon">
+      <i class="iconfont">&#xe600;</i>
+    </div>
+    <div class="mobile-nav-box">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/tags">Tags</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function (d, w) {
+    w.onload = function () {
+      var $menuIcon = d.querySelector('.mobile-nav-menu');
+      var $navBox = d.querySelector('.mobile-nav-box');
+      var animationEndCallback = null;
+      function hideNavBox() {
+        addClass($navBox, 'zoomOut');
+        animationEndCallback = function () {
+          removeClass($navBox, 'zoomOut');
+          $navBox.style.display = 'none';
+        }
+      }
+
+      $menuIcon.onclick = function (e) {
+        e.stopPropagation();
+        if ($navBox.style.display === 'block') return hideNavBox();
+        $navBox.style.display = 'block';
+        addClass($navBox, 'zoomIn');
+        animationEndCallback = function () {
+          removeClass($navBox, 'zoomIn');
+        }
+      };
+
+      $navBox.onclick = function (e) {
+        e.stopPropagation();
+      };
+
+      $navBox.addEventListener('animationend', function (e) {
+        animationEndCallback && animationEndCallback();
+      }, false);
+
+      d.body.addEventListener('click', function () {
+        if ($navBox.style.display === 'block') hideNavBox();
+      }, false);
+
+      var $header = d.querySelector('#header');
+      var $top = d.querySelector('.top');
+      var topHeight = $top.offsetHeight;
+      w.addEventListener('scroll', function () {
+        var scrollTop = d.documentElement.scrollTop || d.body.scrollTop;
+        var step = $header.className.indexOf('visible') >= 0 ? topHeight : 0;
+        if (scrollTop > $header.offsetHeight - step) {
+          addClass($header, 'active');
+        } else {
+          removeClass($header, 'active');
+        }
+      }, false);
+
+      d.addEventListener('mousewheel', function(e) {
+        if (e.wheelDeltaY >= 0) {
+          addClass($header, 'visible');
+        } else {
+          removeClass($header, 'visible');
+        }
+      })
+    }
+  })(document, window);
+</script>
+
+    <div class="banner">
+      <div class="center">
+        <div class="text">记录学习笔记、日常生活。</div>
+        <div class="search-box">
+          <input type="text" placeholder="搜索文章" id="search-input">
+          <div class="icon">
+            <i class="iconfont">&#xe6a5;</i>
+          </div>
+          <div id="results-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/simple-jekyll-search.min.js"></script>
+
+<script>
+  (function (d, w) {
+    var $searchInput = d.getElementById('search-input');
+    var $resultsContainer = d.getElementById('results-container');
+
+    SimpleJekyllSearch({
+      searchInput: $searchInput,
+      resultsContainer: $resultsContainer,
+      json: '/search.json',
+      searchResultTemplate:
+        '<li class="search-results-item">' +
+        '<a href="{url}" title="{title}">' +
+        '<div class="title">' +
+        '<h4>{title}</h4><span>{date}</span>' +
+        '</div>' +
+        '<p class="description">{description}</p>' +
+        '<p class="search-tags">{tags}</p>' +
+        '</a>' +
+        '</li>',
+      noResultsText: '<div class="not-data">哎呀，没有找到！</div>',
+      limit: 20,
+      fuzzy: false
+    })
+  })(document, window);
+</script>
+
+
+  <div class="container">
+  <ul class="posts">
+    
+    <li class="post">
+      <a href="/2019/11/24/My-Blog.html">
+        <h2 class="title">My Blog</h2>
+        <div class="excerpt">My Blog</div>
+        <div class="excerpt">My Blog
+</div>
+        <div class="time">2019-11-24 </div>
+      </a>
+    </li>
+    
+  </ul>
+  <div class="tags">
+    <h3 class="title">All TAGS</h3>
+    <div class="box">
+      
+      <a class="tag" href="/tags/#Blog">Blog</a>
+      
+    </div>
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <a href="https://github.com/LeeKKun">
+    <i class="iconfont">&#xe64a;</i>
+  </a>
+  <a href="https://github.com/LeeKKun">
+    <i class="iconfont">&#xe63f;</i>
+  </a>
+</footer>
+
+
+  <div class="back-top">
+  <i class="iconfont">&#xe7a1;</i>
+</div>
+<script>
+  (function (d, w) {
+    function scrollTo(targetY) {
+      var currentY =
+        d.documentElement.scrollTop || d.body.scrollTop;
+      var distance = targetY - currentY;
+      var num = 0;
+
+      function animate() {
+        var currentY =
+          d.documentElement.scrollTop || d.body.scrollTop;
+        w.scrollTo(0, currentY + distance / 10);
+        num++;
+        if (num === 10) return;
+        w.requestAnimationFrame(animate);
+      }
+
+      animate();
+    }
+    var $upTop = d.querySelector('.back-top');
+
+    $upTop.onclick = function () {
+      scrollTo(0);
+    };
+
+    function bindEvent() {
+      var scrollTop = d.documentElement.scrollTop || d.body.scrollTop;
+      if (scrollTop > 100) {
+        $upTop.style.display = 'block';
+      } else {
+        $upTop.style.display = 'none';
+      }
+    }
+
+    w.addEventListener('scroll', bindEvent);
+    w.addEventListener('load', bindEvent);
+  })(document, window);
+</script>
+
+</body>
+
+</html>

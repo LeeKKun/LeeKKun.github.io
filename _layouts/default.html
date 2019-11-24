@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="keywords" content="李坤">
+  <meta name="description" content="李坤的博客" />
+  <title>{{ page.title }}</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/css/base.css">
+  {% if page.css %}
+  <link rel="stylesheet" href="{{ page.css }}">
+  {% endif %}
+  <script src="/js/util.js"></script>
+</head>
+
+<body>
+  {% include header.html %}
+
+  {{ content }}
+
+  {% include footer.html %}
+
+  {% include back-top.html %}
+</body>
+
+</html>
