@@ -107,11 +107,11 @@
 
     <div class="content">
       <h1 class="post-title">学习使用git笔记</h1>
-      <div class="post-description">git</div>
+      <div class="post-description">一些git的常用命令</div>
       <div class="post-date">2019-11-25</div>
       <div class="tags">
         
-        <a class="tag" href="/tags/#学习git" title="学习git">学习git</a>
+        <a class="tag" href="/tags/#学习git,笔记" title="学习git,笔记">学习git,笔记</a>
         
       </div>
     </div>
@@ -122,7 +122,17 @@
       <h3>学习git的基本方法笔记</h3>
 <!--more-->
 <pre>
+  <!-- <code class="language-shell"> -->
   <code class="language-shell">
+    
+    git config配置:
+              git config  user.name 你的目标用户名
+              git config  user.email 你的目标邮箱名
+              查看配置信息:  git config --list
+              重置 :git config --unset --global user.name
+                    git config --unset --global user.email
+
+    git init:  初始化仓库;
     git add . : 将文件由 工作区 添加到 暂存区;
     git commit -m"xxx" :  将文件由 暂存区 添加到 仓库区，生成版本号;
     git status:  查看文件的状态;
@@ -149,12 +159,12 @@
 
     git远程仓库,同步
         git clone 地址:   克隆仓库;
-        git push 地址 本地分支名称:     推送本地代码到远程仓库;
+        git push 地址 本地分支名称(master):     推送本地代码到远程仓库;
         git pull 地址 远程分支名称:     拉取远程仓库代码到本地
         
   </code>
 </pre>
-<p>My Blog End</p>
+<p>My Git Notes</p>
       <div class="date">发布时间：2019-11-25</div>
       <div id="gitalk-container"></div>
     </div>
