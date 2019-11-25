@@ -1,6 +1,15 @@
 [
   
     {
+      "title": "学习使用git笔记",
+      "category": "",
+      "description": "git",
+      "tags": "学习git",
+      "url": "/2019/11/25/git%E5%AD%A6%E4%B9%A0.html",
+      "date": "2019-11-25"
+    } ,
+  
+    {
       "title": "Hello world",
       "category": "",
       "description": "My Blog",
