@@ -1,6 +1,15 @@
 [
   
     {
+      "title": "日常的一些笔记",
+      "category": "",
+      "description": "项目的一些日常笔记,每日更新",
+      "tags": "学习git,笔记",
+      "url": "/2019/11/29/%E6%97%A5%E5%B8%B8%E7%AC%94%E8%AE%B0.html",
+      "date": "2019-11-29"
+    } ,
+  
+    {
       "title": "学习使用git笔记",
       "category": "",
       "description": "一些git的常用命令",

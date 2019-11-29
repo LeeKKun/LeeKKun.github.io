@@ -7,18 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="keywords" content="李坤">
   <meta name="description" content="李坤的博客" />
-  <title>李坤的博客</title>
+  <title>日常的一些笔记 - 李坤的博客</title>
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="stylesheet" href="/css/gitalk.css">
+  <link rel="stylesheet" href="/css/prism.css">
   <link rel="stylesheet" href="/css/base.css">
-  
-  <link rel="stylesheet" href="/css/index.css">
-  
+  <link rel="stylesheet" href="/css/post.css">
   <script src="/js/util.js"></script>
 </head>
 
 <body>
-  <div id="header">
-  <div class="wrap">
+  <div id="header" style="background-image: url(/images/bg-banner.jpg)">
     <div class="top">
   <div class="title">
     <a href="/">李坤的博客</a>
@@ -106,97 +105,46 @@
   })(document, window);
 </script>
 
-    <div class="banner">
-      <div class="center">
-        <div class="text">记录学习笔记、日常生活。</div>
-        <div class="search-box">
-          <input type="text" placeholder="搜索文章" id="search-input">
-          <div class="icon">
-            <i class="iconfont">&#xe6a5;</i>
-          </div>
-          <div id="results-container"></div>
-        </div>
+    <div class="content">
+      <h1 class="post-title">日常的一些笔记</h1>
+      <div class="post-description">项目的一些日常笔记,每日更新</div>
+      <div class="post-date">2019-11-29</div>
+      <div class="tags">
+        
+        <a class="tag" href="/tags/#学习git,笔记" title="学习git,笔记">学习git,笔记</a>
+        
       </div>
     </div>
   </div>
-</div>
-
-<script src="/js/simple-jekyll-search.min.js"></script>
-
-<script>
-  (function (d, w) {
-    var $searchInput = d.getElementById('search-input');
-    var $resultsContainer = d.getElementById('results-container');
-
-    SimpleJekyllSearch({
-      searchInput: $searchInput,
-      resultsContainer: $resultsContainer,
-      json: '/search.json',
-      searchResultTemplate:
-        '<li class="search-results-item">' +
-        '<a href="{url}" title="{title}">' +
-        '<div class="title">' +
-        '<h4>{title}</h4><span>{date}</span>' +
-        '</div>' +
-        '<p class="description">{description}</p>' +
-        '<p class="search-tags">{tags}</p>' +
-        '</a>' +
-        '</li>',
-      noResultsText: '<div class="not-data">哎呀，没有找到！</div>',
-      limit: 20,
-      fuzzy: false
-    })
-  })(document, window);
-</script>
-
 
   <div class="container">
-  <ul class="posts">
-    
-    <li class="post">
-      <a href="/2019/11/29/%E6%97%A5%E5%B8%B8%E7%AC%94%E8%AE%B0.html">
-        <h2 class="title">日常的一些笔记</h2>
-        <div class="excerpt">项目的一些日常笔记,每日更新</div>
-        <div class="excerpt">一些常用的方法
-</div>
-        <div class="time">2019-11-29 </div>
-      </a>
-    </li>
-    
-    <li class="post">
-      <a href="/2019/11/25/git%E5%AD%A6%E4%B9%A0.html">
-        <h2 class="title">学习使用git笔记</h2>
-        <div class="excerpt">一些git的常用命令</div>
-        <div class="excerpt">学习git的基本方法笔记
-</div>
-        <div class="time">2019-11-25 </div>
-      </a>
-    </li>
-    
-    <li class="post">
-      <a href="/2019/11/24/My-Blog.html">
-        <h2 class="title">Hello world</h2>
-        <div class="excerpt">My Blog</div>
-        <div class="excerpt">My Blog
-</div>
-        <div class="time">2019-11-24 </div>
-      </a>
-    </li>
-    
-  </ul>
-  <div class="tags">
-    <h3 class="title">All TAGS</h3>
-    <div class="box">
-      
-      <a class="tag" href="/tags/#Blog">Blog</a>
-      
-      <a class="tag" href="/tags/#学习git,笔记">学习git,笔记</a>
-      
+    <div class="main">
+      <h3>一些常用的方法</h3>
+<!--more-->
+<pre>
+  <!-- <code class="language-shell"> -->
+  <code class="language-shell">
+    一 - ajax 进度条功能 ：
+    功能： 页面只要发送ajax请求， 就出现一个进度条，给用户提示 
+    1-1 ：做进度条 ： 用div，改变宽度即可  width += 随机数;
+    1-2 ： 进度条怎么动画：  请求发送时，进度条动起来， 请求完成后，进度条动画结束； 
+      进度条插件： NProgress.js
+         NProgress.start() 进度条开始 
+         NProgress.done() 进度条结束 
+        
+        
+  </code>
+</pre>
+<p>My Git Notes</p>
+      <div class="date">发布时间：2019-11-29</div>
+      <div id="gitalk-container"></div>
+    </div>
+    <div class="nav-container">
+      <div class="main-nav">
+        <div class="title">目录</div>
+      </div>
     </div>
   </div>
-</div>
-
-
   <footer id="footer">
   <a href="https://github.com/LeeKKun">
     <i class="iconfont">&#xe64a;</i>
@@ -205,7 +153,6 @@
     <i class="iconfont">&#xe63f;</i>
   </a>
 </footer>
-
 
   <div class="back-top">
   <i class="iconfont">&#xe7a1;</i>
@@ -249,6 +196,66 @@
   })(document, window);
 </script>
 
+  <script src="/js/prism.js"></script>
+  <script>
+    (function (w, d) {
+      var $nav = document.querySelector('.main-nav');
+      var $main = document.querySelector('.main');
+      var titleNodeNames = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6'];
+      var contentItems = [];
+      var navItems = [];
+      for (var i = 0; i < $main.children.length; i++) {
+        var element = $main.children[i];
+        if (titleNodeNames.includes(element.nodeName)) {
+          var link = document.createElement('a');
+          link.href = '#' + element.innerText;
+          link.innerText = element.innerText;
+
+          $nav.appendChild(link);
+          navItems.push(link);
+          element.id = element.innerText;
+          contentItems.push(element);
+        }
+      }
+
+      function bindEvent() {
+        var scrollTop = d.documentElement.scrollTop || d.body.scrollTop;
+        if (scrollTop >= $nav.parentNode.offsetTop) {
+          addClass($nav, 'active');
+        } else {
+          removeClass($nav, 'active');
+        }
+        for (var i = 0; i < navItems.length; i++) {
+          removeClass(navItems[i], 'active');
+        }
+        for (var i = contentItems.length - 1; i >= 0; i--) {
+          if (scrollTop >= getElementTop(contentItems[i])) {
+            addClass(navItems[i], 'active');
+            return;
+          }
+        }
+        addClass(navItems[0], 'active');
+      }
+      w.addEventListener('scroll', bindEvent);
+      w.addEventListener('load', bindEvent);
+    })(window, document)
+  </script>
+  <script src="/js/gitalk.js"></script>
+  <script src="/js/md5.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '70f0d7717a3b431b217b',
+      clientSecret: '517a6c8848d87c5ee30964e40e0b287726a417f4',
+      repo: 'LeeKKun.github.io',
+      owner: 'LeeKKun',
+      admin: ['LeeKKun'],
+      id: md5(location.pathname),
+      distractionFreeMode: false,
+      createIssueManually: true
+    });
+
+    gitalk.render('gitalk-container');
+  </script>
 </body>
 
 </html>
