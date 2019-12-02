@@ -2,7 +2,7 @@
 layout: post
 title: 日常的一些笔记
 description: 项目的一些日常笔记,每日更新
-tags: 学习git,笔记
+tags: 日常笔记,项目
 bannerImg: /images/bg-banner.jpg
 ---
 <h3>一些常用的方法</h3>
@@ -18,7 +18,21 @@ bannerImg: /images/bg-banner.jpg
          NProgress.start() 进度条开始 
          NProgress.done() 进度条结束 
         
-        
+  本地存储:
+    cookie: 容量小  4kb左右
+
+    sessionStorage:  容量大  5m左右   临时储存 页面关闭数据就销毁
+    sessionStorage: 只能储存字符串类型的数据，如果数据不是在府城,会先调用toString(),在进行储存；
+                    如果是复杂类型的数据，会导致元数据丢失
+            解决方案: 用字符串形式储存，并且保留原有数据的格式 JSON字符串
+                      localStorage.setItem('cc',obj)
+
+    localStorage: 容量大  5m左右  本地永久储存数据 除非手动删除
+    特点:设置方便:
+          setItem(k,y)  设置数据
+          getItem(k)    获取数据
+          removeItem(k) 删除数据
+          clear();      清空数据
   </code>
 </pre>
 <p>My Git Notes</p>
