@@ -11,42 +11,45 @@ bannerImg: /images/bg-banner.jpg
   <!-- <code class="language-shell"> -->
   <code class="language-shell">
     git config配置:
-              git config  user.name 你的目标用户名
-              git config  user.email 你的目标邮箱名
-              查看配置信息:  git config --list
-              重置 :git config --unset --global user.name
-                    git config --unset --global user.email
+        git config  user.name 你的目标用户名
+        git config  user.email 你的目标邮箱名
+        查看配置信息:  git config --list
+        重置 :git config --unset --global user.name
+              git config --unset --global user.email
 
-    git init:  初始化仓库;
-    git add . : 将文件由 工作区 添加到 暂存区;
-    git commit -m"xxx" :  将文件由 暂存区 添加到 仓库区，生成版本号;
-    git status:  查看文件的状态;
+    git 推送方法:
+    git init:   初始化仓库;
+    git add . :   将文件由 工作区 添加到 暂存区;
+    git commit -m"xxx" :   将文件由 暂存区 添加到 仓库区，生成版本号;
+    git remote add origin 目标仓库地址:   绑定目标仓库地址仓库
+    git push -u origin master:    推送到远程仓库,第一次加-u, 之后直接git push就可以
+    git status:    查看文件的状态;
     git log:   查看提交日志,git log --oneline 简介的日志;
 
     git diff: 可以查看每次提交内容的不同;
-              # 查看工作区与暂存区的不同: git diff
-              # 查看暂存区与仓库区的不同: git diff --cached
-              # 查看工作区与仓库区的不同，HEAD表示最新的那次提交: git diff HEAD
-              # 查看两个版本之间的不同:  git diff c265262 de4845b
+        # 查看工作区与暂存区的不同: git diff
+        # 查看暂存区与仓库区的不同: git diff --cached
+        # 查看工作区与仓库区的不同，HEAD表示最新的那次提交: git diff HEAD
+        # 查看两个版本之间的不同:  git diff c265262 de4845b
 
     git reset --hard 版本号: 重置,可以恢复到之前的版本
     git 文件忽视:
-                1- 创建 .gitignore文件
-                2- 在文件中写入要忽视的文件名称，每个一行
+        1- 创建 .gitignore文件
+        2- 在文件中写入要忽视的文件名称，每个一行
 
     git 分支命令:
-                git branch 分支名称创建分支，分支中的代码，在创建时与当前分支的内容完全相同。
-                git branch可以查看所有的分支
-                git checkout 分支名称切换分支  HEAD指针指向了另一个分支
-                git checkout -b 分支名称 创建并切换分支
-                git branch -d 分支名称 可以删除分支
-                git merge 分支名称 将其他分支的内容合并到当前分支。
+        git branch 分支名称创建分支，分支中的代码，在创建时与当前分支的内容完全相同。
+        git branch可以查看所有的分支
+        git checkout 分支名称切换分支  HEAD指针指向了另一个分支
+        git checkout -b 分支名称 创建并切换分支
+        git branch -d 分支名称 可以删除分支
+        git merge 分支名称 将其他分支的内容合并到当前分支。
 
     git远程仓库,同步
         git clone 地址:   克隆仓库;
         git push 地址 本地分支名称(master):     推送本地代码到远程仓库;
         git pull 地址 远程分支名称:     拉取远程仓库代码到本地
-        
+
     git 中文转义处理:
     1. 尝试修改 右键 -- Options -- Text --Character set 选中UTF-8
     无效
