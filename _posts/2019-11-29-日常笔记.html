@@ -5,34 +5,49 @@ description: 项目的一些日常笔记,每日更新
 tags: 日常笔记,项目
 bannerImg: /images/bg-banner.jpg
 ---
-<h3>一些常用的方法</h3>
+<h2>一些常用的方法</h2>
 <!--more-->
+<!-- <code class="language-shell"> -->
+<h3>ajax 进度条功能</h3>
 <pre>
-  <!-- <code class="language-shell"> -->
-  <code class="language-shell">
-  ajax 进度条功能 ：
-    功能： 页面只要发送ajax请求， 就出现一个进度条，给用户提示 
-        1-1 ：做进度条 ： 用div，改变宽度即可  width += 随机数;
-        1-2 ： 进度条怎么动画：  请求发送时，进度条动起来， 请求完成后，进度条动画结束； 
-    进度条插件： NProgress.js
-         NProgress.start() 进度条开始 
-         NProgress.done() 进度条结束 
-        
-  本地存储:
-    cookie: 容量小  4kb左右
+<code class="language-js">
+功能： 页面只要发送ajax请求， 就出现一个进度条，给用户提示
+1-1 ：做进度条 ： 用div，改变宽度即可 width += 随机数;
+1-2 ： 进度条怎么动画： 请求发送时，进度条动起来， 请求完成后，进度条动画结束；
+进度条插件： NProgress.js
+NProgress.start() 进度条开始
+NProgress.done() 进度条结束
+</code>
+</pre>
 
-    sessionStorage:  容量大  5m左右   临时储存 页面关闭数据就销毁
+<h3>本地存储</h3>
+<pre>
+<code class="language-js">
+<h3>cookie: 容量小 4kb左右</h3>
+    sessionStorage: 容量大 5m左右 临时储存 页面关闭数据就销毁
     sessionStorage: 只能储存字符串类型的数据，如果数据不是在府城,会先调用toString(),在进行储存；
-                    如果是复杂类型的数据，会导致元数据丢失
-            解决方案: 用字符串形式储存，并且保留原有数据的格式 JSON字符串
-                      localStorage.setItem('cc',obj)
-
-    localStorage: 容量大  5m左右  本地永久储存数据 除非手动删除
+    如果是复杂类型的数据，会导致元数据丢失
+    解决方案: 用字符串形式储存，并且保留原有数据的格式 JSON字符串
+    localStorage.setItem('cc',obj)
+<h3>localStorage: 容量大 5m左右 本地永久储存数据 除非手动删除</h3>
     特点:设置方便:
-          setItem(k,y)  设置数据
-          getItem(k)    获取数据
-          removeItem(k) 删除数据
-          clear();      清空数据
-  </code>
+    setItem(k,y) 设置数据
+    getItem(k) 获取数据
+    removeItem(k) 删除数据
+    clear(); 清空数据
+</code>
+</pre>
+
+<h3>三大框架的更新机制</h3>
+<pre>
+<code class="language-js">
+angular:  脏检查机制
+
+react:  虚拟DOM jsx => 虚拟DOM => 真实DOM
+        jsx发生数据变化 => 新的虚拟DOM => 新旧虚拟DOM对比 => 找到有差异的地方 => 更新真实DOM
+vue:  细粒度更新: Data => observer( defineReactive( definePorperty ) ) => Data(getter 和 setter)
+      外界使用name => getter => 收集依赖 Dep(数组) => Wathcer
+      中等粒度更新: 虚拟DOM
+</code>
 </pre>
 <p>My Git Notes</p>
