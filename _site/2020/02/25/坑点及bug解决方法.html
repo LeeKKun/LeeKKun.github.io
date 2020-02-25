@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="keywords" content="李坤">
   <meta name="description" content="李坤的博客" />
-  <title>学习使用React笔记 - 李坤的博客</title>
+  <title>坑点及bug解决方法 - 李坤的博客</title>
   <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
   <link rel="stylesheet" href="/css/gitalk.css">
   <link rel="stylesheet" href="/css/prism.css">
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <div id="header" style="background-image: url(/images/React.jpg)">
+  <div id="header" style="background-image: url(/images/bg-banner.jpg)">
     <div class="top">
   <div class="title">
     <a href="/">李坤的博客</a>
@@ -106,12 +106,12 @@
 </script>
 
     <div class="content">
-      <h1 class="post-title">学习使用React笔记</h1>
-      <div class="post-description">一些React的命令</div>
-      <div class="post-date">2020-01-14</div>
+      <h1 class="post-title">坑点及bug解决方法</h1>
+      <div class="post-description">一些前端的坑点,及bug</div>
+      <div class="post-date">2020-02-25</div>
       <div class="tags">
         
-        <a class="tag" href="/tags/#学习React,笔记" title="学习React,笔记">学习React,笔记</a>
+        <a class="tag" href="/tags/#坑点及bug解决方法" title="坑点及bug解决方法">坑点及bug解决方法</a>
         
       </div>
     </div>
@@ -119,92 +119,19 @@
 
   <div class="container">
     <div class="main">
-      <h2>学习React的基本方法笔记</h2>
+      <h2>一些常用解决方法</h2>
 <!--more-->
-<!-- <pre>
-<code class="language-shell">
-</code>
-</pre> -->
-
-<b>全局安装</b>
-<pre class="language-shell">
-npm i react-react-app -g
-</pre>
-
-<b>初始化项目</b>
-<pre class="language-shell">
-npx create-react-app 项目名称
-</pre>
-
-<b>项目启动</b>
-<pre class="language-shell">
-yarn start
-</pre>
-
-<p></p>
-<b>函数组件的简化</b>
+<!-- <code class="language-shell"> -->
+<h3>node-Sass解决</h3>
 <pre>
 <code class="language-js">
-const Child = () => (
-div
-   p标题p
-    p靓仔p
-div
-)
-渲染
-ReactDOM.render( Child name="马冬梅" , document.getElementById('root') )
+1-1 项目根目录创建一个文件:  .npmrc
+1-2 再配置: sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
 </code>
 </pre>
+<p>My Git Notes</p>
 
-<p></p>
-<b>处理this</b>
-<pre>
-<code class="language-js">
-三种方式
-写法1 : 使用bind
-constructor() {
-super()
-this.fn1 = this.fn1.bind(this)
-}
-
-写法2 :
-onClick={ this.fn1.bind(this) }
-- 方式2 : 属性初始化语法
-onClick={ this.fn2 }
-fn2 = () => {
-....
-}
-
-- 方式3 : 箭头函数
-onClick={ () => this.fn3() }
-
-fn3(){}
-</code>
-</pre>
-
-<p></p>
-<b>受控组件和非受控组件</b>
-<pre>
-<code class="language-js">
-非受控组件:  没有受到控住的组件
-            通过ref 收集数据
-            iptRef = React.createref()
-            input ref={this.iptRef}
-            this.iptRef.current.value
-
-受控组件:   受到控住的组件
-        添加一个value属性
-        通过value + onChange
-        value: M ==> V
-        inChange: V ==> M
-</code>
-</pre>
-
-
-<p>My React Notes</p>
-
-
-      <div class="date">发布时间：2020-01-14</div>
+      <div class="date">发布时间：2020-02-25</div>
       <div id="gitalk-container"></div>
     </div>
     <div class="nav-container">

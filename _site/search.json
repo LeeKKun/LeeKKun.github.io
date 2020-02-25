@@ -1,6 +1,15 @@
 [
   
     {
+      "title": "坑点及bug解决方法",
+      "category": "",
+      "description": "一些前端的坑点,及bug",
+      "tags": "坑点及bug解决方法",
+      "url": "/2020/02/25/%E5%9D%91%E7%82%B9%E5%8F%8Abug%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html",
+      "date": "2020-02-25"
+    } ,
+  
+    {
       "title": "学习使用React笔记",
       "category": "",
       "description": "一些React的命令",

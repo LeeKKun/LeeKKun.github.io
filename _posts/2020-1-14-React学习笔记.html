@@ -26,4 +26,66 @@ npx create-react-app 项目名称
 <pre class="language-shell">
 yarn start
 </pre>
+
+<p></p>
+<b>函数组件的简化</b>
+<pre>
+<code class="language-js">
+const Child = () => (
+div
+   p标题p
+    p靓仔p
+div
+)
+渲染
+ReactDOM.render( Child name="马冬梅" , document.getElementById('root') )
+</code>
+</pre>
+
+<p></p>
+<b>处理this</b>
+<pre>
+<code class="language-js">
+三种方式
+写法1 : 使用bind
+constructor() {
+super()
+this.fn1 = this.fn1.bind(this)
+}
+
+写法2 :
+onClick={ this.fn1.bind(this) }
+- 方式2 : 属性初始化语法
+onClick={ this.fn2 }
+fn2 = () => {
+....
+}
+
+- 方式3 : 箭头函数
+onClick={ () => this.fn3() }
+
+fn3(){}
+</code>
+</pre>
+
+<p></p>
+<b>受控组件和非受控组件</b>
+<pre>
+<code class="language-js">
+非受控组件:  没有受到控住的组件
+            通过ref 收集数据
+            iptRef = React.createref()
+            input ref={this.iptRef}
+            this.iptRef.current.value
+
+受控组件:   受到控住的组件
+        添加一个value属性
+        通过value + onChange
+        value: M ==> V
+        inChange: V ==> M
+</code>
+</pre>
+
+
 <p>My React Notes</p>
+
